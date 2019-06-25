@@ -6,9 +6,9 @@ services:
 node_js:
   - 10
 
-branches:
-  only:
-    - master
+# branches:
+#   only:
+#     - master
 
 install:
   - travis_retry yarn
@@ -25,4 +25,4 @@ jobs:
     - stage: release
       node_js: lts/*
       script:
-        - echo 'semantic-release'
+        - yarn semantic-release

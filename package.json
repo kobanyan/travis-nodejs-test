@@ -1,6 +1,6 @@
 {
   "name": "travis-nodejs-test",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "private": true,
   "description": "",
   "keywords": [],
@@ -47,6 +47,7 @@
     "rollup": "^1.16.2",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.21.2",
+    "semantic-release": "^15.13.16",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.2"
   }
