@@ -6,22 +6,17 @@ services:
 node_js:
   - 10
 
-# branches:
-#   only:
-#     - master
-
 install:
   - travis_retry yarn
 
-script:
-  - yarn lint
-  - yarn test --coverage
-
-# after_success:
-#   - npm run codecov
-
 jobs:
   include:
+    - stage: lint
+      script:
+        - yarn lint
+    - stage: test
+      script:
+        - yarn test --coverage
     - stage: release
       node_js: lts/*
       script:
