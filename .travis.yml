@@ -4,22 +4,19 @@ services:
   - docker
 
 node_js:
+  - 8
   - 10
 
 install:
   - travis_retry yarn
-  - yarn add --dev coveralls
 
 jobs:
   include:
-    - stage: lint
-      script:
-        - yarn lint
-    - stage: test
-      script:
-        - yarn test --coverage --coverageReporters=text-lcov | coveralls
     - stage: build
       script:
+        - yarn lint
+        - yarn add --dev coveralls
+        - yarn test --coverage --coverageReporters=text-lcov | coveralls
         - yarn build
     - stage: release
       node_js: lts/*
