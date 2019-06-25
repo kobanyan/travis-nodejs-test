@@ -29,7 +29,8 @@
     "clean": "rimraf ./lib",
     "compile": "rollup -c",
     "lint": "eslint 'src/**/*.ts' '*.js'",
-    "pretest": "run-s lint compile",
+    "pretest": "run-p lint build",
+    "prepublishOnly": "run-s build",
     "test": "jest"
   },
   "devDependencies": {

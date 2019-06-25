@@ -9,9 +9,9 @@ node_js:
 
 install:
   - travis_retry yarn
-  - yarn add --dev coveralls
 
 script:
+  - yarn add --dev coveralls
   - yarn test --coverage --coverageReporters=text-lcov | coveralls
 
 jobs:
@@ -19,5 +19,4 @@ jobs:
     - stage: release
       node_js: lts/*
       script:
-        - ls -la
         - yarn semantic-release
