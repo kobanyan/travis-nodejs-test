@@ -30,7 +30,6 @@
     "compile": "rollup -c",
     "lint": "eslint 'src/**/*.ts' '*.js'",
     "pretest": "run-p lint build",
-    "prepublishOnly": "run-s build",
     "test": "jest"
   },
   "devDependencies": {

@@ -19,4 +19,6 @@ jobs:
     - stage: release
       node_js: lts/*
       script:
+        - yarn build
+        - ls -la
         - yarn semantic-release
